@@ -1,0 +1,20 @@
+{
+  "name": "note-keeping-application",
+  "version": "1.0.0",
+  "description": "![Node.js](https://img.shields.io/badge/Node.js-14.x-green)\r ![MongoDB](https://img.shields.io/badge/MongoDB-4.4-green)\r ![Express.js](https://img.shields.io/badge/Express.js-4.17-green)",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1"
+  }
+}
