@@ -14,6 +14,9 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+const notesRouter = require("./routes/notes");
+app.use("/notes", notesRouter);
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
