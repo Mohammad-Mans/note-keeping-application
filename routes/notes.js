@@ -39,4 +39,26 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedNote = await Note.findByIdAndUpdate(
+      req.params.id,
+      {
+        title: req.body.title,
+        content: req.body.content,
+        createdAt: req.body.createdAt,
+      },
+      { new: true }
+    );
+
+    if (!updatedNote) {
+      return res.status(404).json({ message: "Note not found" });
+    }
+
+    res.json(updatedNote);
+  } catch (err) {
+    res.status(500).json({ message: "Error updating note" });
+  }
+});
+
 module.exports = router;
