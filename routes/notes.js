@@ -11,4 +11,18 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.post("/", async (req, res) => {
+  const note = new Note({
+    title: req.body.title,
+    content: req.body.content,
+    createdAt: req.body.createdAt || new Date(),
+  });
+  try {
+    const newNote = await note.save();
+    res.status(201).json(newNote);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 module.exports = router;
